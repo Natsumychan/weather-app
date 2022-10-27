@@ -1,0 +1,63 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.app-container{
+    width: 90%;
+    height: auto;
+    margin: 10px auto;
+    background: linear-gradient(to bottom right,blue, pink);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 13px 20px 26px 7px rgba(0, 0, 0, 0.38);
+}
+
+header{
+    width:70%;
+    height: 100px;
+    margin: 30px auto;
+    margin-bottom: 0;
+}
+
+.form-label{
+    color:whitesmoke;
+}
+
+.btn-danger{
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.weather-info{
+    width: 65%;
+    margin: 30px auto;
+}
+
+.card-main {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.weather-rank{
+    font-size: 0.7rem;
+}
+
+.title-weekD{
+    font-size: 1.1rem;
+}
+
+.text-week{
+    font-size: 0.65rem;
+}
+
+footer p{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.temperature{
+    text-decoration: none;
+}
