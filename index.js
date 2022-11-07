@@ -28,9 +28,9 @@ function citySearching(){
 };
 
 //Get the weather info from Open Weather Map by city name
-let apiKey= "a8c8dff06387dca73875ee68c3552ff7"
 function getInfoByCityName(city){
-  let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+  let apiKey= "te60b41a5ebo3808074c9edaf83940fc"
+  let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`
   axios.get(apiUrl).then(printWeatherInfo)
 };
 
@@ -39,51 +39,29 @@ let metricInfo;
 let mainTemperature=document.querySelector("#main-temperature");
 
 function printWeatherInfo(response){
-  let weatherDescription= response.data.weather[0].main
+  let weatherDescription= response.data.condition.icon_url
   let celsius= document.querySelector("#celsius")
   let fahrenheit= document.querySelector("#fahrenheit")
   let windSpeed= document.querySelector("#wind-speed")
   let humidity= document.querySelector("#humidity")
   
-  let humidityInfo= Math.round(response.data.main.humidity)
+  let humidityInfo= Math.round(response.data.temperature.humidity)
   let windSpeedInfo= Math.round(response.data.wind.speed)
-  metricInfo= Math.round(response.data.main.temp)
+  metricInfo= Math.round(response.data.temperature.current)
   
   celsius.addEventListener("click",changeCelsius)
   fahrenheit.addEventListener("click",changeFahrenheit)
   mainTemperature.innerHTML=`${metricInfo} °C`
-  windSpeed.innerHTML=`Wind: ${windSpeedInfo}m/s` 
+  windSpeed.innerHTML=`Wind: ${windSpeedInfo}Km/H` 
   humidity.innerHTML=`Humidity: ${humidityInfo}% | `
   weatherImage(weatherDescription)
 }
 
 //Change weather Image
 function weatherImage(weatherDescription){
-  console.log(weatherDescription)
-  switch (weatherDescription) {
-    case "Drizzle":
-      document.querySelector("#main-img").src="./src/images/sunny and rainy.png"
-      break;
-    case "Rain":
-      document.querySelector("#main-img").src="./src/images/sunny and rainy.png"
-       break;
-    case "Thunderstorm":
-      document.querySelector("#main-img").src="./src/images/stormy.png"
-      break;
-    case "Snow":
-      document.querySelector("#main-img").src="./src/images/stormy.png"
-      break;
-    case "Clear":
-      document.querySelector("#main-img").src="./src/images/sunny.png"
-      break;
-    case "Clouds":
-      document.querySelector("#main-img").src="./src/images/windy.png"
-      break;
-    default:
-      break;
-  }
+  const weatherImg= document.querySelector("#main-img")
+  weatherImg.src= weatherDescription
 }
-
 
 //Change temperature
 
@@ -125,3 +103,4 @@ function searchCityByCoords(response){
   getInfoByCityName(fetchCity)
 }
 
+getInfoByCityName("Sacramento")
