@@ -101,13 +101,14 @@ function showCoordinates(position){
 //Get city's name by coordinates
 let fetchCity
 function getInfoByCoordinates(latitude,longitude){
-  let apiUrlCoords=`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
+  let apiUrlCoords=`https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}`
+  console.log(apiUrlCoords)
   axios.get(apiUrlCoords).then(searchCityByCoords)
 };
 
 function searchCityByCoords(response){
-  fetchCity= response.data.name
-  cityName.innerHTML= fetchCity
+  fetchCity= response.data.city
+  cityName.innerText= fetchCity
   getInfoByCityName(fetchCity)
 }
 
