@@ -14,7 +14,7 @@
       <header class="grid text-center">
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Current weather in:</label>
-            <input type="text" class="form-control text-white-50 bg-dark" id="formGroupExampleInput" placeholder="Write the city's name and press Enter">
+            <input type="text" class="form-control text-white-50 bg-dark" id="formGroupExampleInput" placeholder="Type the city's name and press Enter">
             <button type="button" class="btn btn-danger">Current location</button>
         </div>
       </header>
@@ -22,12 +22,13 @@
         <div class="card p-3 mb-2 bg-dark text-white card-main">
           <h5 id="city" class="card-title">Sacramento</h5>
           <p id="current-time"></p>
+          <p id="weather-description"></p>
           <img src="./src/images/sunny.png" id="main-img" class="card-img-top" alt="sunny-weather">
           <div class="card-body ">
           <p class="card-text">
             <a href="#" class="temperature" id="celsius">°C</a>
              |
-            <a href="#" class="temperature" id="fahrenheit">°F</a>
+            <a href="#" class="temperature active" id="fahrenheit">°F</a>
             <br>
             <span id="main-temperature">
               25 °C
@@ -49,7 +50,7 @@
         <div class="row justify-content-evenly g-4">
           <div class="col-6 card bg-dark text-white" style="width: 5rem;">
             <h5 class="card-title title-weekD">Mon</h5>
-            <img src="./src/images/windy.png" class="card-img-top" alt="windy-weather" style="width: 3rem; height: 3.5rem;">
+            <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="windy-weather" style="width: 3rem; height: 3.5rem;">
             <div class="card-body">
               <p class="card-text text-week"> 
                 20°C
@@ -60,7 +61,7 @@
             <h5 class="card-title title-weekD">
               Tue
             </h5>
-            <img src="./src/images/stormy.png" class="card-img-top" alt="..." style="width: 3rem; height: 3.5rem;">
+            <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="..." style="width: 3rem; height: 3.5rem;">
             <div class="card-body">
               <p class="card-text text-week"> 
                 22°C
@@ -69,7 +70,7 @@
           </div>
           <div class="col-6 card bg-dark text-white" style="width: 5rem;">
             <h5 class="card-title title-weekD">Wed</h5>
-            <img src="./src/images/sunny and rainy.png" class="card-img-top" alt="rain and sun" style="width: 3rem; height: 3.5rem;">
+            <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" class="card-img-top" alt="rain and sun" style="width: 3rem; height: 3.5rem;">
             <div class="card-body">
               <p class="card-text text-week"> 
                 24°C
@@ -78,7 +79,7 @@
           </div>
           <div class="col-6 card bg-dark text-white" style="width: 5rem;">
             <h5 class="card-title title-weekD">Thr</h5>
-            <img src="./src/images/cloudy.png" class="card-img-top" alt="clouds and sun" style="width: 3rem; height: 3.5rem;">
+            <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="clouds and sun" style="width: 3rem; height: 3.5rem;">
             <div class="card-body">
               <p class="card-text text-week"> 
                 24°C
@@ -87,7 +88,7 @@
           </div>
           <div class="col-6 card bg-dark text-white" style="width: 5rem;">
             <h5 class="card-title title-weekD">Fri</h5>
-            <img src="./src/images/sunny.png" class="card-img-top" alt="sun" style="width: 3rem; height: 3.5rem;">
+            <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" class="card-img-top" alt="sun" style="width: 3rem; height: 3.5rem;">
             <div class="card-body">
               <p class="card-text text-week"> 
                 28°C

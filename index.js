@@ -1,3 +1,6 @@
+const celsius= document.querySelector("#celsius")
+const fahrenheit= document.querySelector("#fahrenheit")
+
 //Date information
 function digitalClock(){
   let nowDate= new Date()
@@ -28,8 +31,8 @@ function citySearching(){
 };
 
 //Get the weather info from Open Weather Map by city name
+let apiKey= "te60b41a5ebo3808074c9edaf83940fc"
 function getInfoByCityName(city){
-  let apiKey= "te60b41a5ebo3808074c9edaf83940fc"
   let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`
   axios.get(apiUrl).then(printWeatherInfo)
 };
@@ -40,15 +43,15 @@ let mainTemperature=document.querySelector("#main-temperature");
 
 function printWeatherInfo(response){
   let weatherDescription= response.data.condition.icon_url
-  let celsius= document.querySelector("#celsius")
-  let fahrenheit= document.querySelector("#fahrenheit")
   let windSpeed= document.querySelector("#wind-speed")
   let humidity= document.querySelector("#humidity")
+  const weatherDescriptionElement= document.querySelector("#weather-description")
   
   let humidityInfo= Math.round(response.data.temperature.humidity)
   let windSpeedInfo= Math.round(response.data.wind.speed)
   metricInfo= Math.round(response.data.temperature.current)
   
+  weatherDescriptionElement.innerText= response.data.condition.description
   celsius.addEventListener("click",changeCelsius)
   fahrenheit.addEventListener("click",changeFahrenheit)
   mainTemperature.innerHTML=`${metricInfo} °C`
@@ -68,12 +71,17 @@ function weatherImage(weatherDescription){
 function changeCelsius(event){
   event.preventDefault()
   mainTemperature.innerHTML= `${metricInfo} °C`
+
+  celsius.classList.remove("active")
+  fahrenheit.classList.add("active")
 }
 
 function changeFahrenheit(event){
   event.preventDefault()
   let fahrenheitConvertion= Math.round((metricInfo* 9/5)+32)
   mainTemperature.innerHTML= `${fahrenheitConvertion} °F`
+  celsius.classList.add("active")
+  fahrenheit.classList.remove("active")
 }
 
 //Set current location info
