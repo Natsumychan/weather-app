@@ -59,25 +59,8 @@ header{
     font-size: 1.4rem;
 }
 
-.weather-rank{
-    font-size: 1rem;
-}
-
-.title-weekD{
-    font-size: 1.1rem;
-}
-
-.text-week{
-    font-size: 0.65rem;
-}
-
-footer p{
-    margin-top: 20px;
-    text-align: center;
-}
-
-.temperature{
-    color:whitesmoke;
+.temperature {
+    color: whitesmoke;
     text-decoration: none;
 }
 
@@ -86,11 +69,40 @@ footer p{
 }
 
 .active {
-    color:cyan;
+    color: cyan;
 }
 
 .active:hover {
     cursor: pointer;
+}
+
+.weather-rank{
+    font-size: 1rem;
+}
+
+.card-forecast{
+    width: 80px;
+    height: 150px;
+}
+
+.title-weekD{
+    margin-top: 20px;
+    font-size: 1.1rem;
+    opacity: 0.5;
+}
+
+.text-week{
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.forecast-min{
+    opacity: 0.5;
+}
+
+footer p{
+    margin-top: 20px;
+    text-align: center;
 }
 
 .code-info{
