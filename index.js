@@ -67,22 +67,6 @@ function searchCityForecast(city){
     axios.get(apiUrl).then(displayForecast)
 }
 
-//  <div class="col-6 card bg-dark text-white card-forecast">
-//             <h5 class="card-title title-weekD">Mon</h5>
-//             <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="windy-weather" style="width: 3rem; height: 3.5rem;">
-//             <p class="card-text text-week"> 
-//               <span class="forecast-max">
-//                 20      
-//               </span>
-//               <span class="forecast-min">
-//                 10
-//               </span>
-//             </p>
-//           </div>
-
-
-
-//Create forecast HTMl elements
 function displayForecast(response){
   console.log(response.data.daily)
   let days=response.data.daily
