@@ -8,12 +8,28 @@
     width: 700px;
     height: auto;
     margin: 10px auto;
-    background: linear-gradient(to bottom right,blue, pink);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(255, 143, 38, 1) 0%, rgba(150, 126, 197, 1) 48%, #0073ff 100%);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 300% 100%;
     border-radius: 10px;
     box-shadow: 13px 20px 26px 7px rgba(0, 0, 0, 0.38);
+    animation: gradient 20s infinite alternate;
 }
+
+@keyframes gradient {
+    0% {
+            background-position: 0% 50%;
+        }
+    
+        50% {
+            background-position: 100% 50%;
+        }
+    
+        100% {
+            background-position: 0% 50%;
+        }
+}
+
 
 header{
     width:70%;
