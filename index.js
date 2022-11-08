@@ -85,7 +85,7 @@ function displayForecast(response){
             <h5 class="card-title title-weekD">
               ${displayDay(day.time*1000)}
             </h5>
-            <img src=${day.condition.icon_url} alt="${day.condition.description}" style="width: 3rem; height: 3.5rem;">
+            <img src=${day.condition.icon_url} alt="${day.condition.description} class="img-forecast">
             <p class="card-text text-week"> 
               <span class="forecast-max">
                 ${Math.round(day.temperature.maximum)}      

@@ -88,6 +88,11 @@ header{
     height: 150px;
 }
 
+.img-forecast{
+    width:40px;
+    height:40px;
+}
+
 .title-weekD{
     margin-top: 20px;
     font-size: 1.1rem;
