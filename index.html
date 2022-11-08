@@ -13,14 +13,29 @@
     <div class="app-container border">
       <header class="grid text-center">
         <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Current weather in:</label>
-            <input type="text" class="form-control text-white-50 bg-dark" id="formGroupExampleInput" placeholder="Type the city's name and press Enter">
+            <label for="city-input" class="form-label">Current weather in:</label>
+            <form action="" id="search-form" class="row mb-5">
+            <div class="col-9">
+              <input
+                type="search"
+                placeholder="Type a city "
+                class="form-control text-white-50 bg-dark"
+                id="city-input"
+                autocomplete="off" />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn-primary w-100" />
+            </div>
+            </form>
             <button type="button" class="btn btn-danger">Current location</button>
         </div>
       </header>
       <main class="grid text-center weather-info">
         <div class="card p-3 mb-2 bg-dark text-white card-main">
-          <h5 id="city" class="card-title">Sacramento</h5>
+          <h5 id="city" class="card-title"></h5>
           <p id="current-time"></p>
           <p id="weather-description"></p>
           <img src="" id="main-img" class="card-img-top" alt="sunny-weather">
@@ -31,15 +46,15 @@
             <a href="#" class="temperature active" id="fahrenheit">°F</a>
             <br>
             <span id="main-temperature">
-              25 °C
+              
             </span>  
         
             <p class="weather-rank">
               <span id="humidity" >
-                Humidity: 40% |
+                Humidity:  |
               </span>
               <span id="wind-speed" >
-                Wind: 22m/s
+                Wind: 
               </span>
             </p>
           </p>

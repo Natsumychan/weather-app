@@ -1,7 +1,11 @@
+//Global variable
+const form= document.querySelector("#search-form")
+const cityInputElement=document.querySelector("#city-input")
 const celsius= document.querySelector("#celsius")
 const fahrenheit= document.querySelector("#fahrenheit")
+const cityName= document.querySelector("#city")
 
-let citySelected
+let citySelected="La Ceja"
 
 //Date information
 function digitalClock(){
@@ -18,16 +22,15 @@ function digitalClock(){
 };
 
 //Search city
-let searchCity= document.querySelector("#formGroupExampleInput");
-let cityName= document.querySelector("#city")
-searchCity.addEventListener("keyup",event => {
-	if (event.keyCode === 13){
-      citySearching()
-	}
-});
+form.addEventListener("submit",handleSubmit)
+
+function handleSubmit(event){
+    event.preventDefault()
+    citySearching()
+}
 
 function citySearching(){
-  citySelected= searchCity.value
+  citySelected= cityInputElement.value
   cityName.innerHTML= citySelected
   getInfoByCityName(citySelected)
   searchCityForecast(citySelected)
@@ -70,8 +73,7 @@ function searchCityForecast(city){
 }
 
 //Create HTML elements to display forecast
-function displayForecast(response){
-  console.log(response.data.daily)
+function displayForecast(response){ 
   let days=response.data.daily
     let forecastElement= document.querySelector("#forecast")
     let forecastHTML=`<div class="row justify-content-evenly g-4">`
@@ -166,4 +168,7 @@ function searchCityByCoords(response){
   searchCityForecast(citySelected)
 }
 
-getInfoByCityName("Sacramento")
+//Default information
+getInfoByCityName(citySelected)
+searchCityForecast(citySelected)
+cityName.innerHTML= citySelected
