@@ -55,7 +55,7 @@ function printWeatherInfo(response){
   celsius.addEventListener("click",changeCelsius)
   fahrenheit.addEventListener("click",changeFahrenheit)
   mainTemperature.innerHTML=`${metricInfo} °C`
-  windSpeed.innerHTML=`Wind: ${windSpeedInfo}Km/H` 
+  windSpeed.innerHTML=`Wind: ${windSpeedInfo} m/s` 
   humidity.innerHTML=`Humidity: ${humidityInfo}% | `
   weatherImage(weatherDescription)
 }
