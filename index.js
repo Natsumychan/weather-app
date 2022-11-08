@@ -154,16 +154,16 @@ function showCoordinates(position){
 }
 
 //Get city's name by coordinates
-let fetchCity
 function getInfoByCoordinates(latitude,longitude){
   let apiUrlCoords=`https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}`
   axios.get(apiUrlCoords).then(searchCityByCoords)
 };
 
 function searchCityByCoords(response){
-  fetchCity= response.data.city
-  cityName.innerText= fetchCity
-  getInfoByCityName(fetchCity)
+  citySelected= response.data.city
+  cityName.innerText= citySelected
+  getInfoByCityName(citySelected)
+  searchCityForecast(citySelected)
 }
 
 getInfoByCityName("Sacramento")
