@@ -1,6 +1,8 @@
 const celsius= document.querySelector("#celsius")
 const fahrenheit= document.querySelector("#fahrenheit")
 
+let citySelected
+
 //Date information
 function digitalClock(){
   let nowDate= new Date()
@@ -25,7 +27,7 @@ searchCity.addEventListener("keyup",event => {
 });
 
 function citySearching(){
-  let citySelected= searchCity.value
+  citySelected= searchCity.value
   cityName.innerHTML= citySelected
   getInfoByCityName(citySelected)
   searchCityForecast(citySelected)
@@ -67,6 +69,7 @@ function searchCityForecast(city){
     axios.get(apiUrl).then(displayForecast)
 }
 
+//Create HTML elements to display forecast
 function displayForecast(response){
   console.log(response.data.daily)
   let days=response.data.daily
@@ -104,8 +107,6 @@ function displayDay(dayStamp){
     
 }
 
-
-
 //Change weather Image
 function weatherImage(weatherDescription){
   const weatherImg= document.querySelector("#main-img")
@@ -113,21 +114,29 @@ function weatherImage(weatherDescription){
 }
 
 //Change temperature
-
 function changeCelsius(event){
   event.preventDefault()
   mainTemperature.innerHTML= `${metricInfo} °C`
 
   celsius.classList.remove("active")
   fahrenheit.classList.add("active")
+  searchCityForecast(citySelected)
 }
 
 function changeFahrenheit(event){
   event.preventDefault()
   let fahrenheitConvertion= Math.round((metricInfo* 9/5)+32)
   mainTemperature.innerHTML= `${fahrenheitConvertion} °F`
+
   celsius.classList.add("active")
   fahrenheit.classList.remove("active")
+
+  searchForecastImperial()
+}
+
+function searchForecastImperial(){
+    let apiUrl=`https://api.shecodes.io/weather/v1/forecast?query=${citySelected}&key=${apiKey}&units=imperial`
+    axios.get(apiUrl).then(displayForecast)
 }
 
 //Set current location info
